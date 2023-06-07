@@ -1,0 +1,14 @@
+# Игнорировать все папки __pycache__
+**/__pycache__/
+
+# Игнорировать папку .vscode
+.vscode/
+
+# Игнорировать файл findex
+findex
+
+# Игнорировать файл game_store.db
+game_store.db
+
+# Игнорировать папку sell_bot_game_venv
+sell_game_bot_venv/
