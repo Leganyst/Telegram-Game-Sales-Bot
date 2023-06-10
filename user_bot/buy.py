@@ -189,7 +189,7 @@ async def start_payment_handler(query: types.CallbackQuery, state: FSMContext):
     # Получаем цену товара из callback_data
     price = int(query.data.split(':')[1]) * 100
 
-    game_info = await state.get_data
+    game_info = await state.get_data()
 
     if price < 10 * 100:
         # Цена товара меньше 10 рублей, выводим сообщение об ошибке
