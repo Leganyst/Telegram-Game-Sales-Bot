@@ -26,7 +26,7 @@ async def add_genre_handler(message: Message, state: FSMContext):
     genres_table = GenresTable()
     try:
         genres_table.add_genre(genre_name)
-        await message.answer(f"Жанр '{genre_name}' успешно добавлен.")
+        await message.answer(f"Жанр '{genre_name}' успешно добавлен. Введите вновь /settings для настроек маркета.")
     except sqlite3.Error as e:
         await message.answer("Ошибка при добавлении жанра. Вероятно, он уже существует.")
         print(f'Ошибка добавления жанра: {e}')

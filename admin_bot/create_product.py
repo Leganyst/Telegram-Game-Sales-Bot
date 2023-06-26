@@ -180,7 +180,7 @@ async def save_game_handler(query: types.CallbackQuery, state: FSMContext):
     exit_button = types.InlineKeyboardButton("Выйти", callback_data="exit")
     markup.add(continue_button, exit_button)
     await query.answer()
-    await query.message.answer("Выберите дальнейшее действие:", reply_markup=markup)
+    await query.message.answer("Проверьте, правильно ли заполнена карточка игры. Если нет - удалите и создайте заново. Если да - сохраните.", reply_markup=markup)
 
     # Переходим в новое состояние
     await AddCardState.Finalize.set()

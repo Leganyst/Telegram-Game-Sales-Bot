@@ -103,7 +103,7 @@ async def edit_handler(query: types.CallbackQuery, state: FSMContext):
     cancel_button = types.InlineKeyboardButton("❌", callback_data="cancel")
     keyboard.row(cancel_button, next_button)
 
-    await bot_admin.send_message(chat_id=query.message.chat.id, text="Выберите игру для редактирования:", reply_markup=keyboard)
+    await bot_admin.send_message(chat_id=query.message.chat.id, text="Выберите карточку игры для редактирования:", reply_markup=keyboard)
     
     # удаляем предыдущее сообщение
     await bot_admin.delete_message(chat_id=query.message.chat.id, message_id=query.message.message_id)
@@ -118,7 +118,7 @@ async def handle_cancel_button_edit(query: types.CallbackQuery, state: FSMContex
     # Выход из режима удаления
     await state.reset_state()
 
-    await bot_admin.send_message(chat_id=query.message.chat.id, text="Выход из режима редактирования.")
+    await bot_admin.send_message(chat_id=query.message.chat.id, text="Выход из режима редактирования. /settings для настроек маркета.")
 
 
 @dp_admin.callback_query_handler(lambda query: query.data.startswith("game_id:"), state=EditGameState.ConfirmEdit)

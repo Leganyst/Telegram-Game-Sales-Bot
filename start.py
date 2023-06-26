@@ -7,11 +7,10 @@ from aiogram import executor
 
 import asyncio
 
-# Запуск двух корутин параллельно
+
 async def main():
     await asyncio.gather(
         dp_admin.start_polling(),
-        # dp_user.start_polling()
     )
 
 if __name__ == '__main__':

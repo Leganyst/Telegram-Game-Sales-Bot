@@ -1,8 +1,8 @@
 import sqlite3
 
 class PurchasesTable:
-    def __init__(self, db_name):
-        self.conn = sqlite3.connect(db_name)
+    def __init__(self):
+        self.conn = sqlite3.connect("game_store.db")
         self.cursor = self.conn.cursor()
 
     def add_purchase(self, user_id, game_id, purchase_date):

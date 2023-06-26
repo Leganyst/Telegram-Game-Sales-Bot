@@ -178,4 +178,4 @@ async def handle_cancel_button(query: types.CallbackQuery, state: FSMContext):
     # Выход из режима удаления
     await state.reset_state()
 
-    await bot_admin.send_message(chat_id=query.message.chat.id, text="Выход из режима удаления.")
+    await bot_admin.send_message(chat_id=query.message.chat.id, text="Выход из режима удаления. /settings для настроек маркета.")
